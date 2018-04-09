@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta content="telephone=no,email=no,adress=no" name="format-detection" />
+  <!--Description-->
+  
+  <meta name="description" content="通过鼠标选中拖拽文件到页面指定位置">
+  
+  <!--Author-->
+  
+  <meta name="author" content="谢荣生">
+  
+  <!--Open Graph Title-->
+  
+  <meta property="og:title" content="文件拖拽"/>
+  
+  <!--Open Graph Description-->
+  
+  <meta property="og:description" content="通过鼠标选中拖拽文件到页面指定位置" />
+  
+  <!--Open Graph Site Name-->
+
+  <meta property="og:site_name" content="迷途羔羊"/>
+
+  <!--Type page-->
+  
+  <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?1d809c37c7b29de1973f335c44cb57b0";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+    <!-- 谷歌统计 -->
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-102262786-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+  <!-- Title -->
+  
+  <title>文件拖拽 - 迷途羔羊</title>
+
+  <link rel="shortcut icon" href="/images/Other/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.js"></script>
+  <link rel="stylesheet" href="/css/pace-theme-flash.css">
+</head>
+<body>
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">        
+        <img src="/images/Other/logo.jpg" alt="迷途羔羊" height="60">        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+        <span>迷途羔羊</span>的部落宅
+    </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+                    
+            <li>
+              <a href="/.">                
+                  <i class="fa fa-home "></i>                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">                
+                  <i class="fa fa-archive "></i>                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">                
+                  <i class="fa fa-user "></i>                
+                关于
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">                
+                  <i class="fa fa-folder-open "></i>                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">                
+                  <i class="fa fa-photo "></i>                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">                
+                  <i class="fa fa-edit "></i>                
+                留言
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            文件拖拽
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2018-02-24
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          </p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h2 id="JS拖动事件"><a href="#JS拖动事件" class="headerlink" title="JS拖动事件"></a>JS拖动事件</h2><ul>
+<li>在拖动目标上触发事件 (源元素):<ul>
+<li>ondragstart - 用户开始拖动元素时触发</li>
+<li>ondrag - 元素正在拖动时触发</li>
+<li>ondragend - 用户完成元素拖动后触发</li>
+</ul>
+</li>
+<li>释放目标时触发的事件:<ul>
+<li>ondragenter - 当被鼠标拖动的对象进入其容器范围内时触发此事件</li>
+<li>ondragover - 当某被拖动的对象在另一对象容器范围内拖动时触发此事件</li>
+<li>ondragleave - 当被鼠标拖动的对象离开其容器范围内时触发此事件</li>
+<li>ondrop - 在一个拖动过程中，释放鼠标键时触发此事件</li>
+</ul>
+</li>
+</ul>
+<p><strong> 详细事件说明可参考web技术文档–&gt;事件类型–&gt;<a href="https://developer.mozilla.org/en-US/docs/Web/Events/dragstart" target="_blank" rel="noopener">拖放事件</a> </strong></p>
+<h2 id="file对象-FileReader对象"><a href="#file对象-FileReader对象" class="headerlink" title="file对象[FileReader对象]"></a>file对象[FileReader对象]</h2><p>FileReader主要用于将文件内容读入内存，通过一系列异步接口，可以在主线程中访问本地文件。</p>
+<blockquote>
+<p>使用FileReader对象，web应用程序可以异步的读取存储在用户计算机上的文件(或者原始数据缓冲)内容，可以使用File对象或者Blob对象来指定所要处理的文件或数据。</p>
+</blockquote>
+<h2 id="创建实例"><a href="#创建实例" class="headerlink" title="创建实例"></a>创建实例</h2><blockquote>
+<p>var reader = new FileReader();</p>
+</blockquote>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">方法定义</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">abort():void</td>
+<td style="text-align:center">终止文件读取操作</td>
+</tr>
+<tr>
+<td style="text-align:center">readAsArrayBuffer(file):void</td>
+<td style="text-align:center">异步按字节读取文件内容，结果用ArrayBuffer对象表示</td>
+</tr>
+<tr>
+<td style="text-align:center">readAsBinaryString(file):void</td>
+<td style="text-align:center">异步按字节读取文件内容，结果为文件的二进制串</td>
+</tr>
+<tr>
+<td style="text-align:center">readAsDataURL(file):void</td>
+<td style="text-align:center">异步读取文件内容，结果用data:url的字符串形式表示</td>
+</tr>
+<tr>
+<td style="text-align:center">readAsText(file,encoding):void</td>
+<td style="text-align:center">异步按字符读取文件内容，结果用字符串形式表示</td>
+</tr>
+</tbody>
+</table>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">事件名称</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">onabort</td>
+<td style="text-align:center">当读取操作被中止时调用</td>
+</tr>
+<tr>
+<td style="text-align:center">onerror</td>
+<td style="text-align:center">当读取操作发生错误时调用</td>
+</tr>
+<tr>
+<td style="text-align:center">onload</td>
+<td style="text-align:center">当读取操作成功完成时调用</td>
+</tr>
+<tr>
+<td style="text-align:center">onloadend</td>
+<td style="text-align:center">当读取操作完成时调用,不管是成功还是失败</td>
+</tr>
+<tr>
+<td style="text-align:center">onloadstart</td>
+<td style="text-align:center">当读取操作将要开始之前调用</td>
+</tr>
+<tr>
+<td style="text-align:center">onprogress</td>
+<td style="text-align:center">在读取数据过程中周期性调用</td>
+</tr>
+</tbody>
+</table>
+<p><strong> 详细事件说明可参考web技术文档–&gt; Web API 接口–&gt;<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader" target="_blank" rel="noopener">FileReader</a> </strong></p>
+<h2 id="直接上代码"><a href="#直接上代码" class="headerlink" title="直接上代码"></a>直接上代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>文件拖拽+图片预览<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .dragbox&#123;</span></span><br><span class="line"><span class="undefined">            width: 300px;</span></span><br><span class="line"><span class="undefined">            height: 300px;</span></span><br><span class="line"><span class="undefined">            margin: 20px;</span></span><br><span class="line"><span class="undefined">            border: 3px dashed #e6e6e6;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        .range&#123;</span></span><br><span class="line"><span class="undefined">            margin: 75px auto;</span></span><br><span class="line"><span class="undefined">            width: 150px;</span></span><br><span class="line"><span class="undefined">            height: 150px;</span></span><br><span class="line"><span class="undefined">            display: block;</span></span><br><span class="line"><span class="undefined">            background-repeat: no-repeat;</span></span><br><span class="line"><span class="undefined">            background-position: center;</span></span><br><span class="line"><span class="undefined">            background-size: cover;</span></span><br><span class="line"><span class="undefined">            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABLCAIAAAB7tddWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1Q0VBNzA0MjEyMDUxMUUzODk2Q0JFM0Q1RjE4QkExQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1Q0VBNzA0MzEyMDUxMUUzODk2Q0JFM0Q1RjE4QkExQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjAzNDA2MkY1MTIwMzExRTM4OTZDQkUzRDVGMThCQTFDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjAzNDA2MkY2MTIwMzExRTM4OTZDQkUzRDVGMThCQTFDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+K6izdgAAAvpJREFUeNrsnFmPqkAQhWmX667gEp9c/v+/MkSDG+4LrvdcSYgRbw/0ALZQ9WBUJOn+uqvqHGCG3e93hUJRUoSAQBAIAkEgCASBIBAE4neRicEcII51Xb/dbnjPGOt0OqlUKok7ApN3jIKwY6DUIBAEgkAQCALho/X47TeXy8U0TcuyrtdrZKPs9/v2m8FgINYgf9QX/gTV+Xw2DCNKBJKmxmKxsAVc0kEcDgfyGq8CNp/Pa5qWy+WiHG6v13v7/XPt6Ha7Al5D3HQ1Go1sNkvtU8lkMsmtESSoCASBSFqEW/DQ0tbr9W63O51OKK6FQkFV1XQ6nSwQ0OOTyQSvjknZbDaA0mq1QCQafSFFasxmM4eCE1Do0+lUQrcSFggsPhzq20NgsVqtkpIax+MxMs+C/aXruvMxaonND75J9W5hUWWxuYAVdRfTg8EplUphGJywQPAFuBd5Dlhw/aDwwgVtCDgCdzph1QisG+dosVjkn44WYxjGC4XnvBuNRtvt9gtA2Hv47SGsZKVS4ef8eDzG4vMVCrpSgEU3xPbZbDar1erLl1AQ7XabU8xAAXvB3XffBnIHwkR2QcUYq9fr5XIZOxkTg6BEkeNLKdQF7AWPFBy1AoUmu8RG/HmE91nxM+J/ORIr07VcLvf7feCt+stAQGIBRNJtOJolDAhdj/hXGj5+u+TzIKAF+MbkK00XFta2BhDRUE0/9gv8Elogbu4TBW8+nyPhHSeuaVqtVuNQC6TzyQUCXsg0TbfyAxfIKogr9ynP1GJyYQZ57qbg7AuIRfclKZwSlDqWBQSmxM9zFALYh+fFBwJJSkNgqeFxSrAPw+EQ9QJew7Is2Sj8FgSW2nu1gylYPkKRMsRTA+4IcjA2fxsnDkLOq/IfACFP54uP1yAQBIJAEIh4gWCPkHk+GJ7AjU/fICJ+qlIghEfoDwQMtRjvyLYDRih4rsDT+bBM9tP5kuhrzN++e6SqqvCdYUb/SIO6BoEgEASCQBAIAkEgCEQg8VeAAQAB1bbO2qoeewAAAABJRU5ErkJggg==");</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        #preview img&#123;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"dragbox"</span> <span class="attr">class</span>=<span class="string">"dragbox"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"file"</span> <span class="attr">class</span>=<span class="string">"range"</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"file"</span> <span class="attr">style</span>=<span class="string">"display: none"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"preview"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//文件拖拽事件</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> dropbox = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"dragbox"</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> preview = <span class="built_in">document</span>.getElementById(<span class="string">"preview"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    dropbox[<span class="number">0</span>].addEventListener(<span class="string">"dragenter"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">        e.stopPropagation();</span></span><br><span class="line"><span class="undefined">        e.preventDefault();</span></span><br><span class="line"><span class="javascript">    &#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    dropbox[<span class="number">0</span>].addEventListener(<span class="string">"dragover"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">        e.stopPropagation();</span></span><br><span class="line"><span class="undefined">        e.preventDefault();</span></span><br><span class="line"><span class="javascript">    &#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    dropbox[<span class="number">0</span>].addEventListener(<span class="string">"drop"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">        e.stopPropagation();</span></span><br><span class="line"><span class="undefined">        e.preventDefault();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> dt = e.dataTransfer;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> files = dt.files;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        update(files);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    &#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//input选择图片</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> file = <span class="built_in">document</span>.getElementById(<span class="string">"file"</span>);</span></span><br><span class="line"><span class="javascript">    file.addEventListener(<span class="string">"change"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> files = <span class="keyword">this</span>.files;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (!!files) &#123;</span></span><br><span class="line"><span class="undefined">            update(files);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">update</span>(<span class="params">files</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; files.length; i++) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> file = files[i];</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> imageType = <span class="regexp">/^image\//</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> ( !imageType.test(file.type) ) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">continue</span>;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="comment">// 填充选择的图片到展示区</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">"img"</span>);</span></span><br><span class="line"><span class="javascript">            img.classList.add(<span class="string">"obj"</span>);</span></span><br><span class="line"><span class="undefined">            preview.appendChild(img);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="comment">// 读取File对象中的内容</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span></span><br><span class="line"><span class="undefined">            reader.readAsDataURL(file);</span></span><br><span class="line"><span class="javascript">            reader.onload = (<span class="function"><span class="keyword">function</span>(<span class="params">aImg</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">                    aImg.src = e.target.result;</span></span><br><span class="line"><span class="undefined">                &#125;;</span></span><br><span class="line"><span class="undefined">            &#125;)(img);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="实例预览"><a href="#实例预览" class="headerlink" title="实例预览"></a>实例预览</h2><p><a href="https://x447618716.github.io/PicturePreview/fileDrag.html" target="_blank" rel="noopener">点击+拖拽上传前预览</a></p>
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+           
+              <li class="next">
+              <a href="/Triad-assembly.html" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">留言</h1> -->
+  
+    <!-- 畅言公共JS代码 start (一个网页只需插入一次) -->
+    <!--PC和WAP自适应版-->
+    <div id="SOHUCS" ></div>
+    <script type="text/javascript">
+        (function(){
+            var appid = 'cytnYqkHS';
+            var conf = 'prod_4b0a55ac3f40181c22839d8715142693';
+            var width = window.innerWidth || document.documentElement.clientWidth;
+            if (width < 960) {
+                window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
+    </script>
+    <!-- 畅言公共JS代码 end -->
+    
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+  <!-- Footer -->
+  <!-- Footer -->
+<script src="/js/app.js"></script>
+<!--<div id="Thplayer"></div>-->
+<!--<script type="application/javascript" src="/blog/js/thplayer.min.js"></script>-->
+<!--<script>-->
+    <!--$("#Thplayer").thplayer({-->
+        <!--title: "蓝莲花",-->
+        <!--author: "许巍",-->
+        <!--cover: "http://p3.music.126.net/C6txAWMGlVmAcAD37RVutQ==/122045790684028.jpg",-->
+        <!--music: "http://p2.music.126.net/K7TQv1uggESpMwlYo2hvlQ==/7724069186226916.mp3"-->
+    <!--});-->
+<!--</script>-->
+<footer class="site-info">
+  <p>
+    <span>迷途羔羊 &copy; 2018</span>
+    
+      <span class="split">|</span>
+      <span>迷途羔羊的技术小屋</span>
+    
+  </p>
+  <!-- 不蒜子网页计数 -->
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+</body>
+</html>

@@ -53,7 +53,7 @@
     </script>
   <!-- Title -->
   
-  <title>文件拖拽 - 迷途羔羊</title>
+  <title>迷途羔羊 - 欢迎来到迷途羔羊</title>
 
   <link rel="shortcut icon" href="/images/Other/favicon.ico">
     <!--font-awesome-->
@@ -133,36 +133,84 @@
   </div>
 </header>
   <!-- Main Content -->
-  
-
-<!-- Main Content -->
-<div class="archive content-area">
-  <div class="container">
-    <h1 class="entry-title">#文件拖拽</h1>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy -->
-        
-        
-          <h2 class="year">2018</h2>
-          <ul class="list">
-            
-  <li>
-    <span class="date">
-      2018-02-24
-    </span>
-    <a href="/file-dragging.html" class="title">
-      文件拖拽
-    </a>
-  </li>
-
-
-          </ul>
-        
-      </div>
+  <div class="site-content home">
+      <div class="content-header" style="background: url(/images/Other/index_bg.jpg) no-repeat top center; background-size: 100% auto;">
+        <div class="headline">
+            <a href="#" class="demo">
+                <div class="img" style="background:#360b02 url(/images/Other/Avatar.jpg) no-repeat top center;"></div>
+                <div class="cover_mask">
+                    <div class="info">
+                        <span>欢迎来到我的博客</br>by:迷途羔羊</span>
+                    </div>
+                </div>
+                <div class="border"></div>
+            </a>
+            <h1 id="Hotnews"></h1>
+            <script type="application/javascript">
+               var content = "永远相信美好的事情即将发生";
+               var i = 0;
+               function show(){
+                   var str  = content.substr(0,i);
+                   Hotnews.innerHTML = str + "_";
+                   i++;
+                   if (i>content.length) i=0;
+                   setTimeout("show()",600);
+               }
+               window.onload = show();
+               </script>
+            <div class="header-link">
+                              
+                  <a href="https://github.com/x447618716" class="icon-github" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>                
+              
+            </div>
+        </div>
     </div>
-  </div>
-  
+  <main class="content-area">
+    
+        <div class="article">
+          <div class="container">
+  <article class="post">
+    <h1 class="entry-title">
+      <a href="/hexo-install.html" rel="bookmark">
+        hexo安装  
+      </a>
+    </h1>
+    
+    <div class="entry-content">
+      <p>
+        <p><img src="/images/timg2.jpg" alt=""><br>
+      </p>
+    </div>
+    <div class="post-more-link text-center">
+            <a class="btn" href="/hexo-install.html" rel="contents">
+              阅读全文 »
+            </a>
+    </div>
+    <p class="posted-on">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+    	2017-07-09
+    </p>
+    <div class="tags-links">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+      
+      <a href="/tags/hexo/" rel="tag">
+        hexo
+      </a>
+      
+    </div>
+    
+  </article>
+</div>
+
+        </div> 
+    
+    
+<nav id="page-nav" class="container">
+    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+</nav>
+
+
+  </main>
 
 </div>
   <!-- Footer -->

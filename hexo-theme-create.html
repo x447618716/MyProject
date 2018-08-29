@@ -3,9 +3,7 @@
 <!-- Head tag -->
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <meta content="telephone=no,email=no,adress=no" name="format-detection" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!--Description-->
   
   <meta name="description" content="分享及储备web开发，全栈开发，自我提高的原创文章或好的摘抄文章">
@@ -154,12 +152,12 @@
         <!-- Post Main Content -->
         <div class="entry-content">
           </p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h2 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载git</h2><p>地址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a>然后默认安装即可</p>
-<h2 id="注册账号，创建仓库"><a href="#注册账号，创建仓库" class="headerlink" title="注册账号，创建仓库"></a>注册账号，创建仓库</h2><p>首先上<a href="https://www.github.com" target="_blank" rel="noopener">https://www.github.com</a>注册一个账号，然后点击右上角个人头像，点击”profile”，进入界面后。点击”Repositories”进入，仓库界面击右方的”New”即可新建一个新仓库了。</p>
-<h2 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h2><p>1.设置用户名和邮箱。双击Git Bash，出现命令行界面。输入如下两行命令：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"你的名字"</span></span><br><span class="line">git config --global user.email <span class="string">"你的邮箱"</span></span><br></pre></td></tr></table></figure></p>
-<p>2.创建本地的ssh key。双击Git Bash，出现命令行界面。输入 ssh -keygen -t rsa -C “<a href="mailto:XXXXXX@XXXX.com" target="_blank" rel="noopener">XXXXXX@XXXX.com</a>“。然后把后面的邮箱替换成你的注册邮箱。然后一路回车，采用默认路径和空密码。接着会在默认路径下生成.ssh的文件夹，用编辑器打开id_rsa.pub复制里面的密钥。<br>3.进入github，点击头像上的”Setting”，左侧有个SSH Keys，点击它，进入页面。点击右侧的”Add SSH key”，自己输入一个标题，然后把密钥赋值进去即可。<br>4.测试一下是否成功，进入git bash，输入 ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>。第一次会提示，是否continue，yes后就会看到：You’ve successfully authenticated, but GitHub does not provide shell access。这就说明成功了。</p>
-<h2 id="仓库初始化"><a href="#仓库初始化" class="headerlink" title="仓库初始化"></a>仓库初始化</h2><h2 id="第一种本地初始化流程："><a href="#第一种本地初始化流程：" class="headerlink" title="第一种本地初始化流程："></a>第一种本地初始化流程：</h2><p>1.创建项目，选择你项目所在的文件夹，鼠标右键，“Git Bash Here”，进入。然后输入命令：git init，创建本地git<br>2.然后给仓库添加远程地址，输入命令： git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:yourName/yourRepo.git yourName是你的用户名，yourRepo是你的仓库名。<br>3.接着输入命令：git pull –rebase origin master 将github上仓库的文件和本地文件同步。</p>
-<h2 id="第二种直接克隆github仓库到本地"><a href="#第二种直接克隆github仓库到本地" class="headerlink" title="第二种直接克隆github仓库到本地"></a>第二种直接克隆github仓库到本地</h2><p>1.进入需要存放项目的文件夹，鼠标右键，“Git Bash Here”，进入。然后输入命令： git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:yourName/yourRepo.git yourName是你的用户名，yourRepo是你的仓库名<br>2.然后进入克隆下来的文件夹，在此写入你的代码</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h2 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载git</h2><p>地址：<a href="https://git-scm.com/downloads" target="_blank" rel="external">https://git-scm.com/downloads</a>然后默认安装即可</p>
+<h2 id="注册账号，创建仓库"><a href="#注册账号，创建仓库" class="headerlink" title="注册账号，创建仓库"></a>注册账号，创建仓库</h2><p>首先上<a href="https://www.github.com" target="_blank" rel="external">https://www.github.com</a>注册一个账号，然后点击右上角个人头像，点击”profile”，进入界面后。点击”Repositories”进入，仓库界面击右方的”New”即可新建一个新仓库了。</p>
+<h2 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h2><p>1.设置用户名和邮箱。双击Git Bash，出现命令行界面。输入如下两行命令：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"你的名字"</span></div><div class="line">git config --global user.email <span class="string">"你的邮箱"</span></div></pre></td></tr></table></figure></p>
+<p>2.创建本地的ssh key。双击Git Bash，出现命令行界面。输入 ssh -keygen -t rsa -C “XXXXXX@XXXX.com”。然后把后面的邮箱替换成你的注册邮箱。然后一路回车，采用默认路径和空密码。接着会在默认路径下生成.ssh的文件夹，用编辑器打开id_rsa.pub复制里面的密钥。<br>3.进入github，点击头像上的”Setting”，左侧有个SSH Keys，点击它，进入页面。点击右侧的”Add SSH key”，自己输入一个标题，然后把密钥赋值进去即可。<br>4.测试一下是否成功，进入git bash，输入 ssh -T git@github.com。第一次会提示，是否continue，yes后就会看到：You’ve successfully authenticated, but GitHub does not provide shell access。这就说明成功了。</p>
+<h2 id="仓库初始化"><a href="#仓库初始化" class="headerlink" title="仓库初始化"></a>仓库初始化</h2><h2 id="第一种本地初始化流程："><a href="#第一种本地初始化流程：" class="headerlink" title="第一种本地初始化流程："></a>第一种本地初始化流程：</h2><p>1.创建项目，选择你项目所在的文件夹，鼠标右键，“Git Bash Here”，进入。然后输入命令：git init，创建本地git<br>2.然后给仓库添加远程地址，输入命令： git remote add origin git@github.com:yourName/yourRepo.git yourName是你的用户名，yourRepo是你的仓库名。<br>3.接着输入命令：git pull –rebase origin master 将github上仓库的文件和本地文件同步。</p>
+<h2 id="第二种直接克隆github仓库到本地"><a href="#第二种直接克隆github仓库到本地" class="headerlink" title="第二种直接克隆github仓库到本地"></a>第二种直接克隆github仓库到本地</h2><p>1.进入需要存放项目的文件夹，鼠标右键，“Git Bash Here”，进入。然后输入命令： git clone git@github.com:yourName/yourRepo.git yourName是你的用户名，yourRepo是你的仓库名<br>2.然后进入克隆下来的文件夹，在此写入你的代码</p>
 <h2 id="上传代码"><a href="#上传代码" class="headerlink" title="上传代码"></a>上传代码</h2><p>1.输入命令：git add acm.cpp可以选择需要上传的单文件，或者git add -A，将当前目录下的所有文件上传。<br>2.第一步之后，git commit -m “XXX” 上传文件，双引号内为文件的一些描述，多文件会统一使用这个描述。<br>3.最后，输入命令：git push -u origin master即可将文件将文件同步到github上了。之后想要上传、更新，重复第五步即可。</p>
         </div>
       </article>
